@@ -1,9 +1,4 @@
-<section>
-  <mat-list>
-    <mat-list-item *ngFor="let task of tasks">
-      <span>{{task.id}}</span>
-      <span>{{task.name}}</span>
-      <span>{{task.description}}</span>
-    </mat-list-item>
-  </mat-list>
-</section>
+<app-task
+  *ngFor="let task of tasks"
+  [task]="task">
+</app-task>

@@ -3,9 +3,12 @@ import {CommonModule} from '@angular/common';
 import {TasksRoutingModule} from './tasks.routing.module';
 import {MaterialModule} from '../common/material/material.module';
 
-import {TasksComponent} from './tasks.component';
-import {TaskListComponent} from './task-list/task-list.component';
-import {TasksService} from './tasks.service';
+import {
+  TasksComponent,
+  TaskListComponent,
+  TaskComponent,
+  TasksService
+} from '.';
 
 @NgModule({
   imports: [
@@ -15,7 +18,8 @@ import {TasksService} from './tasks.service';
   ],
   declarations: [
     TasksComponent,
-    TaskListComponent
+    TaskListComponent,
+    TaskComponent
   ],
   providers: [
     TasksService

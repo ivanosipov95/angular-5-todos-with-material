@@ -1,14 +1,6 @@
 <section class="tasks">
-  <button mat-fab color="primary">
+  <button class="tasks__add-button" mat-fab color="primary">
     <mat-icon>add</mat-icon>
   </button>
-  <mat-card class="tasks__card">
-    <mat-card-header>
-      <mat-card-title>Tasks</mat-card-title>
-    </mat-card-header>
-    <mat-divider></mat-divider>
-    <mat-card-content>
-      <app-task-list [tasks]="tasks$ | async"></app-task-list>
-    </mat-card-content>
-  </mat-card>
+  <app-task-list class="tasks__card" [tasks]="tasks$ | async"></app-task-list>
 </section>
