@@ -2,16 +2,13 @@ indigo_800 = #3949AB
 grey_200 = #EEEEEE
 
 .app-container
-  height 95vh
   display flex
   flex-direction column
+  .mat-drawer-content
+    overflow hidden
   &__sidenav
     background grey_200
-    position absolute
-    top 0
-    bottom 0
-    left 0
-    right 0
+    height 100vh
   &__toolbar
     display flex
     color white

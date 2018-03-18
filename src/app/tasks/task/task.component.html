@@ -7,13 +7,9 @@
       </button>
 
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>mode_edit</mat-icon>
-          <span>Edit</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>done</mat-icon>
-          <span>Done</span>
+        <button mat-menu-item *ngFor="let option of taskOptions">
+          <mat-icon>{{option.icon}}</mat-icon>
+          <span>{{option.label}}</span>
         </button>
       </mat-menu>
     </div>
