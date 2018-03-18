@@ -1,4 +1,16 @@
 <div class="app-container">
-  <mat-toolbar class="app-container__toolbar">Test</mat-toolbar>
-  <router-outlet></router-outlet>
+  <mat-sidenav-container class="app-container__sidenav">
+    <mat-sidenav #sidenav>Sidenav content</mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar class="app-container__toolbar">
+        <button class="app-container__menu"
+                mat-button
+                (click)="sidenav.open()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        Todos App
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
