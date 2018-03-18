@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Task} from './model/task.model';
-import {HttpClient} from '@angular/common/http';
-import {TasksService} from './tasks.service';
-import {Observable} from 'rxjs/Observable';
+import {Router} from '@angular/router';
+import {NAV_LINKS} from './model/tasks.constant';
 
 @Component({
   selector: 'app-tasks',
@@ -10,14 +8,14 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./tasks.component.styl']
 })
 export class TasksComponent implements OnInit {
-  tasks$: Observable<Task[]>;
 
-  constructor(private http: HttpClient,
-              private taskService: TasksService) {
+  navLinks = NAV_LINKS;
+
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
-    this.tasks$ = this.taskService.getTasks();
+    this.router.navigate(['/tasks/relevant']);
   }
 
 }

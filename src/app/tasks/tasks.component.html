@@ -1,6 +1,16 @@
 <section class="tasks">
+  <nav mat-tab-nav-bar class="tasks__nav">
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{link.label}}
+    </a>
+  </nav>
   <button class="tasks__add-button" mat-fab color="primary">
     <mat-icon>add</mat-icon>
   </button>
-  <app-task-list class="tasks__card" [tasks]="tasks$ | async"></app-task-list>
+
+  <router-outlet></router-outlet>
 </section>

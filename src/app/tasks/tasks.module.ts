@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {InjectionToken, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TasksRoutingModule} from './tasks.routing.module';
 import {MaterialModule} from '../common/material/material.module';
@@ -9,6 +9,14 @@ import {
   TaskComponent,
   TasksService
 } from '.';
+import {
+  ActiveTasksResolveService,
+  CompletedTasksService,
+  RelevantTasksService
+} from './services';
+
+import {TaskService} from './model';
+
 
 @NgModule({
   imports: [
@@ -22,7 +30,10 @@ import {
     TaskComponent
   ],
   providers: [
-    TasksService
+    TasksService,
+    ActiveTasksResolveService,
+    { provide: TaskService, useClass: CompletedTasksService, multi: true},
+    { provide: TaskService, useClass: RelevantTasksService, multi: true}
   ]
 })
 export class TasksModule {

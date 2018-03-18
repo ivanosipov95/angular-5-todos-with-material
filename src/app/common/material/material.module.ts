@@ -6,17 +6,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
-  imports: [
-    MatCardModule,
-    MatDividerModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatExpansionModule,
-    MatMenuModule
-  ],
   exports: [
     MatCardModule,
     MatDividerModule,
@@ -24,7 +17,9 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatListModule,
     MatExpansionModule,
-    MatMenuModule
+    MatMenuModule,
+    MatToolbarModule,
+    MatTabsModule
   ]
 })
 export class MaterialModule {
